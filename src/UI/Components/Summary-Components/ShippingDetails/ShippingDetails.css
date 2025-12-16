@@ -1,0 +1,34 @@
+.shipping-main-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    color: var(--text-color);
+    gap: 20px;
+}
+
+.shipping-main-container h3{
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 700;
+}
+
+/* Mobile styling */
+.mobile-delivery-options h3{
+    font-size: 15px;
+    line-height: 22px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+@media only screen and (max-width: 480px){
+    .shipping-main-container {
+        padding: 0;
+        border: none;
+    }
+    .shipping-main-container h3{
+        font-size: 15px;
+        line-height: 22px;
+        font-weight: 600;
+    }
+}
+
