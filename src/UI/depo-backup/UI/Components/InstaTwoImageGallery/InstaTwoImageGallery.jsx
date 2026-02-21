@@ -14,10 +14,10 @@ const InstaTwoImageGallery = () => {
     }
 
      const instaGalleryImages = [
-        'https://fmapi.myfurnituremecca.com/uploads/media/Image%201%20Instagram.jpg', 
-        'https://fmapi.myfurnituremecca.com/uploads/media/Image%202%20Instagram.jpg', 
-        'https://fmapi.myfurnituremecca.com/uploads/media/Image%203%20Instagram.jpg', 
-        'https://fmapi.myfurnituremecca.com/uploads/media/Image%204%20Instagram.jpg'
+        'https://fdapi.thefurnituredepots.com/uploads/media/Image%201%20Instagram.jpg', 
+        'https://fdapi.thefurnituredepots.com/uploads/media/Image%202%20Instagram.jpg', 
+        'https://fdapi.thefurnituredepots.com/uploads/media/Image%203%20Instagram.jpg', 
+        'https://fdapi.thefurnituredepots.com/uploads/media/Image%204%20Instagram.jpg'
     ]
   return (
     <div className={`insta-two-image-gallery ${animateMouse ? 'animate' : ''}`} onMouseMove={handleMouseMove}>

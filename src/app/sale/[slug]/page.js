@@ -6,7 +6,7 @@ export async function generateMetadata({ params }) {
 
   try {
     const res = await fetch(
-      `https://fmapi.myfurnituremecca.com/api/v1/productCategory/get-seo?slug=${params.slug}`,
+      `https://fdapi.thefurnituredepots.com/api/v1/productCategory/get-seo?slug=${params.slug}`,
       { cache: "no-store" }
     );
 
@@ -38,7 +38,7 @@ export async function generateMetadata({ params }) {
 
     const imageUrl = meta.og_image?.startsWith("http")
       ? meta.og_image
-      : `https://fmapi.myfurnituremecca.com${meta.og_image.startsWith("/") ? meta.og_image : `/${meta.og_image}`}`;
+      : `https://fdapi.thefurnituredepots.com${meta.og_image.startsWith("/") ? meta.og_image : `/${meta.og_image}`}`;
 
     return {
       title: `${meta.title}` || `${seoData[0].name} - Furniture Depots`,

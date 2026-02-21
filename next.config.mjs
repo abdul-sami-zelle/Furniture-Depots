@@ -4,7 +4,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'fmapi.myfurnituremecca.com',
+        hostname: 'fdapi.thefurnituredepots.com',
         pathname: '/**',
       },
       {

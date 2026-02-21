@@ -88,7 +88,7 @@ const WishListClient = () => {
         }
 
         response = await axios.post(
-          `https://fmapi.myfurnituremecca.com/api/v1/products/get-by-ids`,
+          `https://fdapi.thefurnituredepots.com/api/v1/products/get-by-ids`,
           { ids: productIds }
         );
 

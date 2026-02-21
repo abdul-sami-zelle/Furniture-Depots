@@ -6,22 +6,22 @@ import Image from 'next/image';
 
 const InstaGallery = () => {
     const instaGalleryImages = [
-        'https://fmapi.myfurnituremecca.com/uploads/media/Image%201%20Instagram.jpg', 
-        'https://fmapi.myfurnituremecca.com/uploads/media/Image%202%20Instagram.jpg', 
-        'https://fmapi.myfurnituremecca.com/uploads/media/Image%203%20Instagram.jpg', 
-        'https://fmapi.myfurnituremecca.com/uploads/media/Image%204%20Instagram.jpg', 
-        'https://fmapi.myfurnituremecca.com/uploads/media/Image%205%20Instagram.jpg', 
-        'https://fmapi.myfurnituremecca.com/uploads/media/Image%206%20Instagram.jpg', 
-        'https://fmapi.myfurnituremecca.com/uploads/media/Image%207%20Instagram.jpg', 
-        'https://fmapi.myfurnituremecca.com/uploads/media/Image%208%20Instagram.jpg', 
-        'https://fmapi.myfurnituremecca.com/uploads/media/Image%2010%20Instagram.jpg', 
-        'https://fmapi.myfurnituremecca.com/uploads/media/Image%209%20Instagram.jpg', 
-        'https://fmapi.myfurnituremecca.com/uploads/media/Image%206%20Instagram.jpg', 
-        'https://fmapi.myfurnituremecca.com/uploads/media/Image%201%20Instagram.jpg', 
-        'https://fmapi.myfurnituremecca.com/uploads/media/Image%208%20Instagram.jpg', 
-        'https://fmapi.myfurnituremecca.com/uploads/media/Image%2010%20Instagram.jpg', 
-        'https://fmapi.myfurnituremecca.com/uploads/media/Image%204%20Instagram.jpg', 
-        'https://fmapi.myfurnituremecca.com/uploads/media/Image%203%20Instagram.jpg', 
+        'https://fdapi.thefurnituredepots.com/uploads/media/Image%201%20Instagram.jpg', 
+        'https://fdapi.thefurnituredepots.com/uploads/media/Image%202%20Instagram.jpg', 
+        'https://fdapi.thefurnituredepots.com/uploads/media/Image%203%20Instagram.jpg', 
+        'https://fdapi.thefurnituredepots.com/uploads/media/Image%204%20Instagram.jpg', 
+        'https://fdapi.thefurnituredepots.com/uploads/media/Image%205%20Instagram.jpg', 
+        'https://fdapi.thefurnituredepots.com/uploads/media/Image%206%20Instagram.jpg', 
+        'https://fdapi.thefurnituredepots.com/uploads/media/Image%207%20Instagram.jpg', 
+        'https://fdapi.thefurnituredepots.com/uploads/media/Image%208%20Instagram.jpg', 
+        'https://fdapi.thefurnituredepots.com/uploads/media/Image%2010%20Instagram.jpg', 
+        'https://fdapi.thefurnituredepots.com/uploads/media/Image%209%20Instagram.jpg', 
+        'https://fdapi.thefurnituredepots.com/uploads/media/Image%206%20Instagram.jpg', 
+        'https://fdapi.thefurnituredepots.com/uploads/media/Image%201%20Instagram.jpg', 
+        'https://fdapi.thefurnituredepots.com/uploads/media/Image%208%20Instagram.jpg', 
+        'https://fdapi.thefurnituredepots.com/uploads/media/Image%2010%20Instagram.jpg', 
+        'https://fdapi.thefurnituredepots.com/uploads/media/Image%204%20Instagram.jpg', 
+        'https://fdapi.thefurnituredepots.com/uploads/media/Image%203%20Instagram.jpg', 
     ]
     const [animateMouse, setAnimateMouse] = useState(false);
     let intervelId;

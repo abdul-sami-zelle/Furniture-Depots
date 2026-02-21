@@ -4,7 +4,7 @@ export async function generateMetadata(props) {
   const params = await props.params; 
   const { slug } = params;
 
-  const res = await fetch(`https://fmapi.myfurnituremecca.com/api/v1/products/get-product-seo?slug=${slug}`, { cache: "no-store" });
+  const res = await fetch(`https://fdapi.thefurnituredepots.com/api/v1/products/get-product-seo?slug=${slug}`, { cache: "no-store" });
 
   if (!res.ok) {
     return {
@@ -27,7 +27,7 @@ export async function generateMetadata(props) {
         {
           url: meta.og_image?.startsWith("http") 
             ? meta.og_image 
-            : `https://fmapi.myfurnituremecca.com/${meta.og_image?.replace(/^\//, '')}`,
+            : `https://fdapi.thefurnituredepots.com/${meta.og_image?.replace(/^\//, '')}`,
           width: 1200,
           height: 630
         }

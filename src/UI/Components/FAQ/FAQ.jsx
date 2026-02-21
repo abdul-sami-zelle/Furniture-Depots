@@ -27,7 +27,7 @@ const FAQ = () => {
     const slug = params['product-archive'];
     const [faqs, setFaqs] = useState([])
     const getFAQs = async () => {
-        const api = `https://fmapi.myfurnituremecca.com/api/v1/category-faqs/get-by-slug/${slug}`;
+        const api = `https://fdapi.thefurnituredepots.com/api/v1/category-faqs/get-by-slug/${slug}`;
 
         try {
             const response = await axios.get(api);

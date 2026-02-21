@@ -76,8 +76,8 @@ const DealOfTheDay = ({ dealEndTime, setDealEndTime, allProducts, setAllProducts
 
   useEffect(() => {
     if (dealData) {
-      setAllProducts(dealData.products)
-      setDealEndTime(dealData.dealOfMonthTiming.datetime);
+      setAllProducts(dealData?.products)
+      setDealEndTime(dealData?.dealOfMonthTiming?.datetime);
     }
   }, [dealData])
 

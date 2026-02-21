@@ -32,7 +32,7 @@ export async function generateMetadata({ params }) {
 
     const imageUrl = meta.og_image?.startsWith("http")
       ? meta.og_image
-      : `https://fmapi.myfurnituremecca.com${meta.og_image.startsWith("/") ? meta.og_image : `/${meta.og_image}`}`;
+      : `https://fdapi.thefurnituredepots.com${meta.og_image.startsWith("/") ? meta.og_image : `/${meta.og_image}`}`;
 
     return {
       title: `${meta.title} - Furniture Depots` || `${seoData[0].name} - Furniture Depots`,

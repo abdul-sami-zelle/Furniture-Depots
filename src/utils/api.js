@@ -9,7 +9,7 @@ import { useEffect } from "react";
 
 // Production Apis
 export const roomApi = `https://roomapi.myfurnituremecca.com`
-export const url = `https://fmapi.myfurnituremecca.com`;
+export const url = `https://fdapi.thefurnituredepots.com`;
 export const siteUrl = `https://myfurnituremecca.com`
 
 
