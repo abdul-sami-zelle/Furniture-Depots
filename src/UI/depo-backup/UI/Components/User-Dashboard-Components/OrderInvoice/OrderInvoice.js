@@ -85,8 +85,8 @@ const generateInvoicePDF = (data) => {
     doc.text(data.billing.phone, 10, 66);
 
     doc.text('101 East Venango St', 90, 58);
-    doc.text('(349) 898-4389', 90, 62);
-    doc.text('meccacustomercare@gmail.com', 90, 66);
+    doc.text('(d', 90, 62);
+    doc.text('cs@thefurnituredepots.com', 90, 66);
 
     doc.text(data.payment_method === 'cybersource_credit_card' ? 'Credit Card' : 'Credit Card', 160, 58);
     doc.text(data.transaction_id.toString(), 160, 62);

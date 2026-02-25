@@ -64,7 +64,7 @@ export async function generateMetadata({ params }) {
       },
     };
   } catch (error) {
-    console.error("Error fetching SEO data:", error);
+    console.log("Error fetching SEO data:");
     return {
       title: "Category - Furniture Depots",
       description: "Browse our collection of quality furniture.",

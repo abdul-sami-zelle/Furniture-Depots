@@ -76,16 +76,16 @@ const Footer = ({ notLandingPage, checkoutPage }) => {
     const [googleRating, setGoogleRating] = useState(null);
 
     const socialIcons = [
-        { name: 'facebook', icon: '/icons/facebook.svg', link: 'https://www.facebook.com/myfurnituremecca' },
-        { name: 'tiktok', icon: '/icons/tiktok.svg', link: 'https://www.tiktok.com/@myfurnituremecca?_t=8gcQvVGSaGI&_r=1' },
-        { name: 'youtube', icon: '/icons/youtube.svg', link: 'https://www.youtube.com/@FurnitureMecca1' },
-        { name: 'insta', icon: '/icons/insta.svg', link: 'https://www.instagram.com/myfurnituremecca/?igshid=MzRlODBiNWFlZA%3D%3D' }
+        { name: 'facebook', icon: '/icons/facebook.svg', link: 'https://www.facebook.com/TheFurnitureDepots/' },
+        { name: 'tiktok', icon: '/icons/tiktok.svg', link: 'https://www.tiktok.com/@thefurnituredepots.com' },
+        { name: 'youtube', icon: '/icons/youtube.svg', link: 'https://www.youtube.com/@TheFurnitureDepots' },
+        { name: 'insta', icon: '/icons/insta.svg', link: 'https://www.instagram.com/thefurnituredepots/' }
     ]
 
     const locationPhoneMail = [
-        { name: stores?.[0]?.city || 'Philadelphia', icon: '/icons/location.svg', link: '#' },
-        { name: '215 352 1600', icon: '/icons/phone.svg', link: '#' },
-        { name: 'meccacustomercare@gmail.com', icon: '/icons/mail.svg', link: '#' }
+        { name: stores?.[0]?.city || 'Rhode Island', icon: '/icons/location.svg', link: '#' },
+        { name: '401-726-0557', icon: '/icons/phone.svg', link: 'tel:4017260557' },
+        { name: 'cs@thefurnituredepots.com', icon: '/icons/mail.svg', link: '#' }
     ]
 
     const { setUserToken } = useUserDashboardContext();
@@ -120,7 +120,7 @@ const Footer = ({ notLandingPage, checkoutPage }) => {
     const footerCustomerCareAndAbout = [
         {
             heading: 'Customer Care', navLinks: [
-                { name: 'Track Your Order', link: 'https://track.myfurnituremecca.com/' },
+                // { name: 'Track Your Order', link: 'https://track.myfurnituremecca.com/' },
                 { name: 'Financing', link: '/financing' },
                 { name: 'Shipping & Delivery', link: '/shipping-and-delivery' },
                 { name: 'Terms & Conditions', link: '/terms-and-conditions' },
@@ -147,7 +147,7 @@ const Footer = ({ notLandingPage, checkoutPage }) => {
         return defaultStore;
     }
 
-    const defaultStore = findDefaultStore()
+    const defaultStore = findDefaultStore() 
 
     const today = new Date().toLocaleDateString('en-US', { weekday: 'long' });
 
@@ -334,7 +334,7 @@ const Footer = ({ notLandingPage, checkoutPage }) => {
                     </div>
                 </div>
                 <div className='footer-rights-reserved-container'>
-                    <p>2020 - 2025 Furniture Depots. All Rights Reserved</p>
+                    <p>2020 - 2026 Furniture Depots. All Rights Reserved</p>
                     <p>
                         Designed & Managed By <Link target='_blank' href={'https://zellesolutions.com/'}> Zelle Solutions</Link>
                     </p>

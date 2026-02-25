@@ -1,6 +1,6 @@
 import React from 'react'
 import './furnitureDropDown.css';
-import imageOne from '../../../Assets/menu-images/furniture-menu-image.avif';
+import imageOne from '../../../Assets/menu-images/furniture-menu-image.jpg';
 import imageTwo from '../../../Assets/menu-images/furniture-menu-image-two.jpg';
 import { Link } from 'react-router-dom';
 

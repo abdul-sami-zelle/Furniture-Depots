@@ -17,27 +17,28 @@ const ContactClient = () => {
             img: '/Assets/icons/costumer-care.png',
             name: 'Customer Care',
             slogan: 'Our customer care team is available to assist your needs. You can reach us',
-            timing: 'Monday to Saturday  between 9:30 AM - 7:30 PM',
-            sundayTime: 'Sunday between 10:00 AM - 6:00 PM.'
+            timing: 'Monday to Sunday between 8:00 AM - 6:00 PM',
+            // sundayTime: 'Sunday between 10:00 AM - 6:00 PM.'
         },
         {
             img: '/Assets/icons/online-support.png',
             name: 'Online Shopping Assistance',
             slogan: 'Need help with online shopping? Our phones are open to assist you during the working hours.',
-            timing: 'Monday to Saturday  between 9:30 AM - 7:30 PM',
-            sundayTime: 'Sunday between 10:00 AM - 6:00 PM.'
+            timing: 'Monday to Sunday between 8:00 AM - Midnight',
+            // sundayTime: 'Sunday between 10:00 AM - 6:00 PM.'
         },
         {
             img: '/Assets/icons/billing-queries.png',
             name: 'Billing Questions',
             slogan: 'Have questions about financing or paying bills? We are here to help you find the best financing or payment solution via phone or our website. Assistance is available',
-            timing: 'Monday to Saturday  between 9:30 AM - 7:30 PM',
-            sundayTime: 'Sunday between 10:00 AM - 6:00 PM.'
+             timing: 'Monday to Sunday between 8:00 AM - 6:00 PM',
+            // sundayTime: 'Sunday between 10:00 AM - 6:00 PM.'
         },
         {
             img: '/Assets/icons/warranty-assurance.png',
             name: 'Warranty Assistance',
             slogan: 'Need help with warranties or product concerns? Our support team is available to provide you the assistance you need.',
+            
         }
     ]
 
@@ -196,7 +197,7 @@ const ContactClient = () => {
                 </div>
                 <div className='contact-head-phone-number-sec'>
                     <img src={'/Assets/icons/telephone-reciever-icon.png'} alt='telephone' />
-                    <p><a href='tel:2153521600'>215 352 1600</a></p>
+                    <p><a href='tel:2153521600'>401-726-0557</a></p>
                 </div>
             </div>
 

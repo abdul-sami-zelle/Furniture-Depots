@@ -2,8 +2,6 @@
 import React, { useState } from 'react'
 import './TabMenuTab.css'
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
-import furnitureMenuImage from '../../../../Assets/menu-images/furniture-menu-image.avif'
-import furnitureMenuImageTwo from '../../../../Assets/menu-images/furniture-menu-image-two.jpg';
 import TabMenuTabLinks from './TabMenuTabLinks/TabMenuTabLinks';
 import { Link } from 'next/link';
 
@@ -645,14 +643,14 @@ const TabMenuTab = ({name, ind, closeMenu, headingLink}) => {
             </div>
         })}
         <div className='tab-sub-menu-images-container'>
-            <div className='tab-sub-menu-image-and-title'>
+            {/* <div className='tab-sub-menu-image-and-title'>
                 <img src={furnitureMenuImage} alt='img' />
                 <span>Introducing my <Link>New Modular Bob</Link></span>
             </div>
             <div className='tab-sub-menu-image-and-title'>
                 <img src={furnitureMenuImageTwo} alt='img two' />
                 <span>Flexible financing</span>
-            </div>
+            </div> */}
         </div>
       </div>
       {activeIndex !== null && activeInnerIndex !== null && (

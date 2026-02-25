@@ -46,8 +46,8 @@ export default function ClientLayout({ children }) {
             <CartProvider>
               <GlobalContextProvider>
                 <BlogsProvider>
-                  <ActiveSalePageProvider>
-                    <LastCallProvider>
+                  {/* <ActiveSalePageProvider> */}
+                    {/* <LastCallProvider> */}
                       <WishListProvider>
                         <LPContentProvider>
                           <OrderProvivder>
@@ -85,8 +85,8 @@ export default function ClientLayout({ children }) {
                           </OrderProvivder>
                         </LPContentProvider>
                       </WishListProvider>
-                    </LastCallProvider>
-                  </ActiveSalePageProvider>
+                    {/* </LastCallProvider> */}
+                  {/* </ActiveSalePageProvider> */}
                 </BlogsProvider>
               </GlobalContextProvider>
             </CartProvider>
