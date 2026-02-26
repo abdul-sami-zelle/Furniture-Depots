@@ -32,7 +32,7 @@ const MobileFooter = ({ checkoutPage }) => {
 
     const contactData = [
         { icon: locationIcon, title: 'Philadelphia', link: '#' },
-        { icon: callIcon, title: '215 352 1600', link: 'tel:2153521600' },
+        { icon: callIcon, title: '401-726-0557', link: 'tel:4017260557' },
         { icon: mailIcon, title: 'meccacustomercare@gmail.com', link: 'mailto:meccacustomercare@gmail.com' }
     ]
 

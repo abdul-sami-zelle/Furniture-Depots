@@ -23,7 +23,7 @@ const CustomerServicePanel = ({ currentPath }) => {
     <div className={`customer-services-panel-main-container`}>
       <div className='customer-services-container'>
         <h3>My Team is Here to Help </h3>
-        <p>Reach out by chat  or phone (215 352 1600)</p>
+        <p>Reach out by chat  or phone (401-726-0557)</p>
         <div className='customer-support-features'>
           {featuresData.map((item, index) => {
             return <CustomerSupportFeatureCard

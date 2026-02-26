@@ -15,6 +15,12 @@ const PaymentTypes = ({
       logo: "/Assets/icons/card-2.png",
       paymentMethodId: "9879079j7mummjh",
     },
+    {
+      type: "paypal",
+      sign: "Paypal",
+      logo: "/Assets/icons/card-2.png",
+      paymentMethodId: "9879079j7mummjh",
+    },
   ];
 
   const { activePaymentMethods, setOrderPayload } = useMyOrders();

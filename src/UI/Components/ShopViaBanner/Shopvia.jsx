@@ -40,14 +40,14 @@ const Shopvia = () => {
         </div>
         {swipeContent ? (
           <span className='webiste-update-main-contianer'>
-            <p className='rotate-message-maintanance'>FREE DELIVERY ON ORDERS ABOVE $500. MILEAGE RESTRICTIONS MAY APPLY</p>
+            {/* <p className='rotate-message-maintanance'>FREE DELIVERY ON ORDERS ABOVE $500. MILEAGE RESTRICTIONS MAY APPLY</p> */}
             <i className='mobile-message'>
               <p>FREE DELIVERY ON ORDERS ABOVE $500.</p>
               <p>MILEAGE RESTRICTIONS MAY APPLY</p>
             </i>
           </span>
         ) : (
-          <span> <FaPhone size={20} color='var(--color-half-white)' style={{ marginRight: '5px' }} /> Get Help Call <a href='tel:4017260557'>215 352 1600</a> or <a href="mailto:cs@thefurnituredepots.com">Email</a> </span>
+          <span> <FaPhone size={20} color='var(--color-half-white)' style={{ marginRight: '5px' }} /> Get Help Call <a href='tel:4017260557'>401-726-0557</a> or <a href="mailto:cs@thefurnituredepots.com">Email</a> </span>
         )}
       </div>
       <IoClose size={15} color='#FFFFFF' onClick={handleCloseBanner} />

@@ -25,7 +25,7 @@ const MobileNavbar = ({ showMobileNav, setMobileNavVisible, headerData, sale_dat
     { name: 'Wishlist', icon: '/icons/wishlist.png', link: '/wishlist' },
     { name: 'Stores', icon: '/icons/store-locator.png', link: '/store-locator' },
     { name: 'Financing', icon: '/icons/financing-icon.png', link: '/financing' },
-    { name: 'Help', icon: '/icons/help-icon.png', link: 'tel:2153521600' },
+    { name: 'Help', icon: '/icons/help-icon.png', link: 'tel:4017260557' },
   ]
 
   const router = useRouter()
@@ -38,50 +38,50 @@ const MobileNavbar = ({ showMobileNav, setMobileNavVisible, headerData, sale_dat
   const { setSigninClicked, setMobileSignupClicked } = useUserDashboardContext()
 
   const checkToken = async () => {
-      const token = localStorage.getItem('userToken');
-      const uid = localStorage.getItem('uuid');
-      if (token) {
-        try {
-          const response = await fetch(`${url}/api/v1/web-users/verify-token`, {
-            method: "GET",
-            headers: {
-              authorization: `${token}`,
-            },
-          });
-          if (response.ok) {
-            const data = await response.json();
-            setUserToken(token);
-            setIsTokenValid(true);
-            setMainLoader(false);
-            router.push(`/user-dashboard/${uid}`)
-          } else {
-            localStorage.removeItem('userToken');
-            setUserToken(null);
-            setIsTokenValid(false);
-            setMainLoader(false);
-            setSigninClicked(true);
-            setMobileSignupClicked(false)
-            router.push(`/my-account`)
-          }
-        } catch (error) {
+    const token = localStorage.getItem('userToken');
+    const uid = localStorage.getItem('uuid');
+    if (token) {
+      try {
+        const response = await fetch(`${url}/api/v1/web-users/verify-token`, {
+          method: "GET",
+          headers: {
+            authorization: `${token}`,
+          },
+        });
+        if (response.ok) {
+          const data = await response.json();
+          setUserToken(token);
+          setIsTokenValid(true);
+          setMainLoader(false);
+          router.push(`/user-dashboard/${uid}`)
+        } else {
           localStorage.removeItem('userToken');
           setUserToken(null);
           setIsTokenValid(false);
           setMainLoader(false);
+          setSigninClicked(true);
+          setMobileSignupClicked(false)
+          router.push(`/my-account`)
         }
-  
+      } catch (error) {
+        localStorage.removeItem('userToken');
+        setUserToken(null);
+        setIsTokenValid(false);
+        setMainLoader(false);
       }
-      else if (token === undefined) {
-        setSigninClicked(true);
-        setMobileSignupClicked(false)
-        router.push(`/my-account`)
-      }
-      else {
-        setSigninClicked(true);
-        setMobileSignupClicked(false)
-        router.push("/my-account")
-      }
+
     }
+    else if (token === undefined) {
+      setSigninClicked(true);
+      setMobileSignupClicked(false)
+      router.push(`/my-account`)
+    }
+    else {
+      setSigninClicked(true);
+      setMobileSignupClicked(false)
+      router.push("/my-account")
+    }
+  }
 
   useDisableBodyScroll(isTokenValid)
 
@@ -95,7 +95,7 @@ const MobileNavbar = ({ showMobileNav, setMobileNavVisible, headerData, sale_dat
             <Link href={'/'} className='mobile-nav-header-image-contianer' onClick={handleNavbarClose}>
               <Image src={'/Assets/Logo/dipo-logo-red.webp'} width={180} height={40} alt='main-logo' />
             </Link>
-            <CiUser strokeWidth={0.8} className='mobile-user-icon' onClick={() => {checkToken(); handleNavbarClose()}} />
+            <CiUser strokeWidth={0.8} className='mobile-user-icon' onClick={() => { checkToken(); handleNavbarClose() }} />
           </div>
 
           <div className='mobile-nav-cart-container' onClick={handleNAvigateToCart}>
@@ -115,26 +115,27 @@ const MobileNavbar = ({ showMobileNav, setMobileNavVisible, headerData, sale_dat
         </div>
 
         <div className='mobile-nav-links-container'>
-          {headerData.map((items, index) => (
-            <Link href={`/${items.category_slug}`} className='mobile-nav-single-link-container' key={index} onClick={handleNavbarClose} >
-              <div className='mobile-nav-single-item-name-anchor' >
-                {items.mob_img === '' ? (
-                  <Image src={`/Assets/mobile-nav-assets/living-room-set.png`} width={70} height={60} alt='nav-icon' />
-                ) : (
-                  <Image src={`${url}${items.mob_img}`} width={70} height={60} alt='nav-icon' />
-                )}
-                <p>{items.category}</p>
-              </div>
-              <span>
-                <MdKeyboardArrowRight size={20} color='var(--text-gray)' />
-              </span>
-            </Link>
-          ))}
+          {headerData?.length > 0 &&
+            headerData.map((items, index) => (
+              <Link href={`/${items?.category_slug}`} className='mobile-nav-single-link-container' key={index} onClick={handleNavbarClose} >
+                <div className='mobile-nav-single-item-name-anchor' >
+                  {items.mob_img === '' ? (
+                    <Image src={`/Assets/mobile-nav-assets/living-room-set.png`} width={70} height={60} alt='nav-icon' />
+                  ) : (
+                    <Image src={`${url}${items?.mob_img}`} width={70} height={60} alt='nav-icon' />
+                  )}
+                  <p>{items.category}</p>
+                </div>
+                <span>
+                  <MdKeyboardArrowRight size={20} color='var(--text-gray)' />
+                </span>
+              </Link>
+            ))}
 
-          <Link href={`/call/${headerOffer.category_slug}`} className='mobile-nav-single-link-container' onClick={handleNavbarClose}>
+          {headerOffer?.category && <Link href={`/call/${headerOffer?.category_slug}`} className='mobile-nav-single-link-container' onClick={handleNavbarClose}>
             <div className='mobile-nav-single-item-name-anchor' >
-              
-                {!headerOffer?.mob_img
+
+              {!headerOffer?.mob_img
                 ? (
                   <Image
                     src="/Assets/mobile-nav-assets/living-room-set.png"
@@ -144,21 +145,21 @@ const MobileNavbar = ({ showMobileNav, setMobileNavVisible, headerData, sale_dat
                   />
                 ) : (
                   <Image
-                    src={url + headerOffer.mob_img}
+                    src={url + headerOffer?.mob_img}
                     width={70}
                     height={60}
                     alt="nav-icon"
                   />
                 )}
 
-              <p>{headerOffer.category} 🔥</p>
+              <p>{headerOffer?.category} 🔥</p>
             </div>
             <span>
               <MdKeyboardArrowRight size={20} color='var(--text-gray)' />
             </span>
-          </Link>
+          </Link>}
 
-          <Link href={`/sale/${sale_data.category_slug}`} className='mobile-nav-single-link-container' onClick={handleNavbarClose}>
+          {sale_data?.category && <Link href={`/sale/${sale_data?.category_slug}`} className='mobile-nav-single-link-container' onClick={handleNavbarClose}>
             <div className='mobile-nav-single-item-name-anchor' >
 
               {!sale_data?.mob_img
@@ -171,19 +172,19 @@ const MobileNavbar = ({ showMobileNav, setMobileNavVisible, headerData, sale_dat
                   />
                 ) : (
                   <Image
-                    src={url + sale_data.mob_img}
+                    src={url + sale_data?.mob_img}
                     width={70}
                     height={60}
                     alt="nav-icon"
                   />
                 )}
 
-              <p>{sale_data.category}</p>
+              <p>{sale_data?.category}</p>
             </div>
             <span>
               <MdKeyboardArrowRight size={20} color='var(--text-gray)' />
             </span>
-          </Link>
+          </Link>}
         </div>
 
         <div className='mobile-nav-footer-buttons'>

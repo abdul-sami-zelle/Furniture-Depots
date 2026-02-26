@@ -229,7 +229,7 @@ const Footer = ({ notLandingPage, checkoutPage }) => {
                                 {locationPhoneMail.map((item, index) => (
                                     <span key={index}>
                                         <img src={item.icon} alt='icon' />
-                                        <p>{item.name === '215 352 1600' ? <a href='tel:2153521600'>{item.name}</a> : item.name === 'meccacustomercare@gmail.com' ? <a href='mailto:meccacustomercare@gmail.com'>{item.name}</a> : item.name}</p>
+                                        <p>{item.name === '401-726-0557' ? <a href='tel:4017260557'>{item.name}</a> : item.name === 'meccacustomercare@gmail.com' ? <a href='mailto:meccacustomercare@gmail.com'>{item.name}</a> : item.name}</p>
                                     </span>
                                 ))}
                             </div>

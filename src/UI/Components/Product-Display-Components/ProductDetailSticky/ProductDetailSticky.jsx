@@ -632,7 +632,7 @@ const ProductDetailSticky = (
                 <p>Talk with an Expert</p>
                 <div className='talk-with-expert-options'>
 
-                  <a href='tel:2153521600'>
+                  <a href='tel:4017260557'>
                     <IoCallOutline size={18} color='var(--text-gray)' />
                     Call
                   </a>

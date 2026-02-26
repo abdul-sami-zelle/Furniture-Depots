@@ -169,8 +169,8 @@ const PromotionalBanner = (
         {currentIndex === 1 ? (
           <span>
             Need help ordering?{' '}
-            <a className='toll-free-ancor' href='tel:2153521600'>
-              Call 215 352 1600
+            <a className='toll-free-ancor' href='tel:4017260557'>
+              Call 401-726-0557
             </a>
           </span>
         ) : currentIndex === 2 ? (

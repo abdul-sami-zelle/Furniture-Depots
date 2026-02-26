@@ -50,7 +50,7 @@ const CategoriesGetScop = ({ isTrue, text, contentImages }) => {
                         </div>
                         <div className='img-two-container'>
                             {contentImages && contentImages.slice(4, 8).map((item, index) => (
-                                <img key={index} className='img-two' src={`${url}${item.image_url}`} alt='img' />
+                                <img key={index} className='img-two' src={`${url}${item?.image_url}`} alt='img' />
                             ))}
                         </div>
                     </div>

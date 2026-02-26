@@ -52,9 +52,9 @@ const Header = ({ checkoutPage }) => {
   // States and variables
   const [isTabMenuOpen, setIsTabMenuOpen] = useState(false);
   const [showCart, setShowCart] = useState(false)
-  const [headerData, setHeaderData] = useState([]);
-  const [headerOffer, setHeaderOffer] = useState([])
-  const [headerSale, setHeaderSale] = useState([]);
+  // const [headerData, setHeaderData] = useState([]);
+  // const [headerOffer, setHeaderOffer] = useState([])
+  // const [headerSale, setHeaderSale] = useState([]);
   const [nearStorePopUp, setNearStorePopUp] = useState(false)
   const [changeLanguage, setChangeLanguage] = useState(false)
   const [currentSelectedCountry, setCurrentSelectedCountry] = useState('');
@@ -79,9 +79,11 @@ const Header = ({ checkoutPage }) => {
     wrongZip,
     wrongZipMessage,
     handleZipWarningClose,
-    searchLocation, 
+    searchLocation,
     setSearchLocation,
   } = useGlobalContext();
+
+
 
   const [cartTotalProducts, setCartTotalProducts] = useState(0);
   useEffect(() => {
@@ -126,7 +128,8 @@ const Header = ({ checkoutPage }) => {
     "Content-Type": "application/json", // Adjust headers as needed
   }
   const [headerCount, setHeaderCount] = useState(0);
-  const { data: headerContent, error: headerError, isLoading: headerLoading } = useSWR(headerApi, fetcher, header, {
+  const { data: headerContent, error: headerError, isLoading: headerLoading } = useSWR(
+    headerApi, fetcher, header, {
     revalidateOnFocus: false,
     revalidateOnReconnect: false,
     dedupingInterval: 1000 * 60 * 60
@@ -134,16 +137,20 @@ const Header = ({ checkoutPage }) => {
   if (headerError && headerCount < 3) {
     setTimeout(() => {
       setHeaderCount(headerCount + 1);
-    }, 1000)
+    }, 2000)
   }
+  const headerData = headerContent?.data?.[0]?.categories ?? [];
+  const headerSale = headerContent?.data?.[0]?.sale ?? null;
+  const headerOffer = headerContent?.data?.[0]?.lastCall ?? null;
 
-  useEffect(() => {
-    if (headerContent) {
-      setHeaderData(headerContent.data[0].categories)
-      setHeaderSale(headerContent.data[0].sale)
-      setHeaderOffer(headerContent.data[0].lastCall)
-    }
-  }, [headerContent])
+  // useEffect(() => {
+  //   if (headerContent) {
+  //     console.log(headerContent, "here is")
+  //     // setHeaderData(headerContent?.data[0]?.categories)
+  //     // setHeaderSale(headerContent?.data[0]?.sale)
+  //     // setHeaderOffer(headerContent?.data[0]?.lastCall)
+  //   }
+  // }, [headerContent])
 
   const handleNearStorePopUp = () => {
     setNearStorePopUp(true)
@@ -643,7 +650,7 @@ const Header = ({ checkoutPage }) => {
               handleINitialLocationSetModal={handleINitialLocationSetModal}
             />
 
-            
+
           </div>
         )}
 
@@ -714,7 +721,12 @@ const Header = ({ checkoutPage }) => {
       {
         isTabMenuOpen ?
           <TabMenu isNavbarVisible={isTabMenuOpen} setIsNavbarVisible={setIsTabMenuOpen} navLinks={navLinks} /> :
-          <Nav navLinks={headerData && headerData} headerOffer={headerOffer} sale_data={headerSale && headerSale} />
+          <Nav navLinks={headerData && headerData}
+            headerOffer={
+              headerOffer && headerOffer
+            } sale_data={
+              headerSale && headerSale
+            } />
       }
 
       {/* Language Modal */}
@@ -745,7 +757,7 @@ const Header = ({ checkoutPage }) => {
         showMobileNav={mobileNavVisible}
         headerData={headerData}
         setMobileNavVisible={setMobileNavVisible}
-        headerOffer={headerOffer}
+        headerOffer={headerOffer && headerOffer}
         sale_data={headerSale && headerSale}
       />
 

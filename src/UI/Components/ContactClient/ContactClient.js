@@ -197,7 +197,7 @@ const ContactClient = () => {
                 </div>
                 <div className='contact-head-phone-number-sec'>
                     <img src={'/Assets/icons/telephone-reciever-icon.png'} alt='telephone' />
-                    <p><a href='tel:2153521600'>401-726-0557</a></p>
+                    <p><a href='tel:4017260557'>401-726-0557</a></p>
                 </div>
             </div>
 
