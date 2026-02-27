@@ -14,10 +14,10 @@ const Shopvia = () => {
   }
 
   const socialData = [
-    { icon: FaFacebook, link: 'https://www.facebook.com/myfurnituremecca' },
-    { icon: FaTiktok, link: 'https://www.tiktok.com/@myfurnituremecca?_t=8gcQvVGSaGI&_r=1' },
-    { icon: FaYoutube, link: 'https://www.youtube.com/@FurnitureMecca1' },
-    { icon: FaInstagram, link: 'https://www.instagram.com/myfurnituremecca/?igshid=MzRlODBiNWFlZA%3D%3D' },
+    { icon: FaFacebook, link: 'https://www.facebook.com/TheFurnitureDepots' },
+    { icon: FaTiktok, link: 'https://www.tiktok.com/@thefurnituredepots.com' },
+    { icon: FaYoutube, link: 'https://www.youtube.com/@TheFurnitureDepots' },
+    { icon: FaInstagram, link: 'https://www.instagram.com/thefurnituredepots/' },
   ]
 
   const [swipeContent, setSwipeContent] = useState(false);
@@ -47,7 +47,7 @@ const Shopvia = () => {
             </i>
           </span>
         ) : (
-          <span> <FaPhone size={20} color='var(--color-half-white)' style={{ marginRight: '5px' }} /> Get Help Call <a href='tel:4017260557'>401-726-0557</a> or <a href="mailto:meccacustomercare@gmail.com">Email</a> </span>
+          <span> <FaPhone size={20} color='var(--color-half-white)' style={{ marginRight: '5px' }} /> Get Help Call <a href='tel:4017260557'>401-726-0557</a> or <a href="mailto:cs@thefurnituredepots.com">Email</a> </span>
         )}
       </div>
       <IoClose size={15} color='#FFFFFF' onClick={handleCloseBanner} />

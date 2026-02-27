@@ -68,8 +68,7 @@ const PromotionalBanner = (
     { label: 'Blogs', link: '/blogs' },
     { label: 'Log In', link: '' },
     { label: 'Stores', link: '/store-locator' },
-    // { label: 'Track Order', link: 'https://track.myfurnituremecca.com/' },
-    { label: 'Financing', link: '/financing' },
+        { label: 'Financing', link: '/financing' },
     { label: 'Help', link: '/contact-us' },
   ]
 
@@ -184,8 +183,6 @@ const PromotionalBanner = (
           <span>Shop everyday low prices!</span>
         )}
       </div>
-
-      {/* <Link href={'https://track.myfurnituremecca.com/'} target='_blank' className='promotion-banner-track-order'>Track Your Order</Link> */}
 
       <div className='header-links-and-select-language'>
         <div className='banner-link-container'>

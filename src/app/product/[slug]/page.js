@@ -22,7 +22,7 @@ export async function generateMetadata(props) {
     openGraph: {
       title: meta.og_title || meta.title,
       description: meta.og_description || meta.description,
-      url: `https://myfurnituremecca.com/product/${slug}`,
+      url: `https://thefurnituredepots.com/product/${slug}`,
       images: [
         {
           url: meta.og_image?.startsWith("http") 

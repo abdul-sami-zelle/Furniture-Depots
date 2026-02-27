@@ -325,7 +325,7 @@ const Header = ({ checkoutPage }) => {
   const currentDay = getCurrentDay(getCurrentTimeForNewYork(), 'en-us')
 
   const findDefaultStore = () => {
-    const defaultStore = stores.find(store => store.postal_code === '19134')
+    const defaultStore = stores.find(store => store.postal_code === '02860')
     return defaultStore;
   }
   const defaultStore = findDefaultStore()

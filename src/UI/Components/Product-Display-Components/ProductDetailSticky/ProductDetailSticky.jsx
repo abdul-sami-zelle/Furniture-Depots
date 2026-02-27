@@ -347,8 +347,8 @@ const ProductDetailSticky = (
 
   const pathname = usePathname()
   const handleWhatsAppClick = () => {
-    const phoneNumber = '15402927702';
-    const message = `Hello, I am interested in this product! https://myfurnituremecca.com${pathname}`;
+    const phoneNumber = '4017260557';
+    const message = `Hello, I am interested in this product! https://thefurnituredepots.com${pathname}`;
     const encodedMessage = encodeURIComponent(message);
     const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
 
@@ -617,7 +617,7 @@ const ProductDetailSticky = (
 
                 <div className='see-it-in-person-body' onClick={handleCloseMiles}>
 
-                  <p>This collection is on display in 9 Stores</p>
+                  <p>This collection is on display in 5 Stores</p>
 
                 </div>
 

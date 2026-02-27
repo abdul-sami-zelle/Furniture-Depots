@@ -9,7 +9,7 @@ export default function CouponCard({prize}) {
          <div className="couponCard">
                 <div className="left_cut"></div>
                 <div className="right_cut"></div>
-            <button onClick={()=>{redirectToUrl("https://myfurnituremecca.com/")}}> 
+            <button onClick={()=>{redirectToUrl("https://thefurnituredepots.com/")}}> 
                 SHOP NOW
             </button>
             <h4>YOU WON</h4>

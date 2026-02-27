@@ -21,13 +21,13 @@ export const GlobalContextProvider = ({ children }) => {
 
   const defaultInfo = {
     locationData: {
-      zipCode: '19134',
-      stateCode: 'PA',
-      city: 'E Venango St',
-      state: 'Philadelphia',
+      zipCode: '02860',
+      stateCode: 'RI',
+      city: 'Pawtucket',
+      state: 'Rhode Island',
       country: 'us',
-      longitude: '-75.1276754',
-      latitude: '40.0045027',
+      longitude: '41.878146',
+      latitude: '-71.395758',
     }
   };
 

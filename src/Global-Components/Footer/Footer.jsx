@@ -120,7 +120,6 @@ const Footer = ({ notLandingPage, checkoutPage }) => {
     const footerCustomerCareAndAbout = [
         {
             heading: 'Customer Care', navLinks: [
-                // { name: 'Track Your Order', link: 'https://track.myfurnituremecca.com/' },
                 { name: 'Financing', link: '/financing' },
                 { name: 'Shipping & Delivery', link: '/shipping-and-delivery' },
                 { name: 'Terms & Conditions', link: '/terms-and-conditions' },
@@ -143,7 +142,7 @@ const Footer = ({ notLandingPage, checkoutPage }) => {
     ]
 
     const findDefaultStore = () => {
-        const defaultStore = stores.find(store => store.postal_code === '19134')
+        const defaultStore = stores.find(store => store.postal_code === '02860')
         return defaultStore;
     }
 
@@ -229,7 +228,7 @@ const Footer = ({ notLandingPage, checkoutPage }) => {
                                 {locationPhoneMail.map((item, index) => (
                                     <span key={index}>
                                         <img src={item.icon} alt='icon' />
-                                        <p>{item.name === '401-726-0557' ? <a href='tel:4017260557'>{item.name}</a> : item.name === 'meccacustomercare@gmail.com' ? <a href='mailto:meccacustomercare@gmail.com'>{item.name}</a> : item.name}</p>
+                                        <p>{item.name === '401-726-0557' ? <a href='tel:4017260557'>{item.name}</a> : item.name === 'cs@thefurnituredepots.com' ? <a href='mailto:cs@thefurnituredepots.com'>{item.name}</a> : item.name}</p>
                                     </span>
                                 ))}
                             </div>

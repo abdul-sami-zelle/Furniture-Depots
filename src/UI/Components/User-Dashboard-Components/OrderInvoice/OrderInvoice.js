@@ -84,9 +84,9 @@ const generateInvoicePDF = (data) => {
     doc.text(data.billing.address_1, 10, 62);
     doc.text(data.billing.phone, 10, 66);
 
-    doc.text('101 East Venango St', 90, 58);
-    doc.text('(349) 898-4389', 90, 62);
-    doc.text('meccacustomercare@gmail.com', 90, 66);
+    doc.text('329 Barton Street', 90, 58);
+    doc.text('401-726-0557', 90, 62);
+    doc.text('cs@thefurnituredepots.com', 90, 66);
 
     doc.text(data.payment_method === 'cybersource_credit_card' ? 'Credit Card' : 'Credit Card', 160, 58);
     doc.text(data.transaction_id.toString(), 160, 62);
@@ -223,7 +223,7 @@ const generateInvoicePDF = (data) => {
     doc.text('SMS SHARING DISCLOSURE: No mobile data will be shared with third parties/affiliates for marketing/ promotional purpose at any time.', 3 + checkboxSize + 2.5, checkboxY + 12)
 
     // Save PDF
-    doc.save('invoice-furnituremecca.pdf');
+    doc.save('invoice-furnituredepot.pdf');
 };
 
 export default generateInvoicePDF;

@@ -345,8 +345,8 @@ const ChatUs = ({ onBack, onClose }) => {
         text: (<>
             I’m sorry, I don’t have the information you’re looking for right now. 
       Please reach out to our Customer Care team at{" "}
-      <a href="mailto:meccacustomercare@gmail.com">
-        meccacustomercare@gmail.com
+      <a href="mailto:cs@thefurnituredepots.com">
+        cs@thefurnituredepots.com
       </a>
       , and they’ll be happy to assist you further.
         </>),

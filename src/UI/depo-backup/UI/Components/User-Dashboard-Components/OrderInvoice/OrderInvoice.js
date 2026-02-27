@@ -84,7 +84,7 @@ const generateInvoicePDF = (data) => {
     doc.text(data.billing.address_1, 10, 62);
     doc.text(data.billing.phone, 10, 66);
 
-    doc.text('101 East Venango St', 90, 58);
+    doc.text('329 Barton Street', 90, 58);
     doc.text('(d', 90, 62);
     doc.text('cs@thefurnituredepots.com', 90, 66);
 
@@ -223,7 +223,7 @@ const generateInvoicePDF = (data) => {
     doc.text('SMS SHARING DISCLOSURE: No mobile data will be shared with third parties/affiliates for marketing/ promotional purpose at any time.', 3 + checkboxSize + 2.5, checkboxY + 12)
 
     // Save PDF
-    doc.save('invoice-furnituremecca.pdf');
+    doc.save('invoice-furnituredepot.pdf');
 };
 
 export default generateInvoicePDF;

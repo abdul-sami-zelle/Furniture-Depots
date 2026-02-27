@@ -64,7 +64,7 @@ const InstaGallery = () => {
   <div className={`icon ${animateMouse ? 'animate' : 'animate'}`}>
     <Link
       target="_blank"
-      href="https://www.instagram.com/myfurnituremecca/?igshid=MzRlODBiNWFlZA%3D%3D"
+      href="https://www.instagram.com/thefurnituredepots/"
     >
       <Image
         src="/Assets/Furniture Mecca/Landing Page/instagram images/insta-icon.png"

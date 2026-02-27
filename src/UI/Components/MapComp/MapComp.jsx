@@ -49,7 +49,7 @@ function FitBounds({ storesData, selectedLocation, defaultCenter }) {
 }
 
 export default function StoreLocationMap({ storesData, selectedLocation }) {
-  const defaultCenter = [39.9526, -75.1652]; // Philadelphia
+  const defaultCenter = [41.5801, -71.4774]; // Rhode Island
 
 
   const destinationIcon = L.divIcon({

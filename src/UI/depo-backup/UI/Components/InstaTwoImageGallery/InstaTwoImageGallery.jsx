@@ -21,7 +21,7 @@ const InstaTwoImageGallery = () => {
     ]
   return (
     <div className={`insta-two-image-gallery ${animateMouse ? 'animate' : ''}`} onMouseMove={handleMouseMove}>
-        <Link className='smallIcon' target='_blank' href={'https://www.instagram.com/myfurnituremecca/?igshid=MzRlODBiNWFlZA%3D%3D'}>
+        <Link className='smallIcon' target='_blank' href={'https://www.instagram.com/thefurnituredepots/'}>
             <img src={'/Assets/Furniture Mecca/Landing Page/instagram images/insta-icon.png'} alt='icon' className={` ${animateMouse ? 'animate' : ''}`}/>
         </Link>
         {instaGalleryImages.map((image, index) => (

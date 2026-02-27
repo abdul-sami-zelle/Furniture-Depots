@@ -7,29 +7,25 @@ const FinancingModal = ({applyFinancing, handleCloseModal}) => {
 
     const financingOptions = [
         {
-            name: 'Snap Finance', 
-            icon: '/Assets/icons/snap.webp', 
-            link: 'https://apply.snapfinance.com/snap-com?paramId=Hq1qQmOsEuVFOlP6bdRg2D3%2BxnW9U1eKtIkrDRYxxSNWnLK4%2F6jHOC57%2FaFXzbBqmSADc%2B25IrUh0fLOir2w4pCWfkdCvNKE7NiJor%2BcWcRld9e3IFdUTA%3D%3D&source=INTERNET&merchantGroupId=36354109'
+            name: 'American First Finance',
+            icon: '/Assets/icons/ammerican-financ.webp',
+            link: ``
         },
         {
             name: 'Acima',
             icon: '/Assets/icons/accima.webp',
-            link: `https://apply.acima.com/lease/select-location?app_id=lo&merchant_guid=merc-3bd04932-d6a0-4848-8a30-af0a9d935f25&utm_campaign=merchant&utm_source=web&lang=en`
+            link: ``
         },
+        {
+            name: 'Synchrony Financial', 
+            icon: '/Assets/icons/Synchrony.png', 
+            link: ''
+        },
+        
         {
             name: 'Progressive Leasing',
             icon: '/Assets/icons/progressive.webp',
-            link: `https://approve.me/s/furnituremecca/https://approve.me/s/furnituremecca/129301`
-        },
-        {
-            name: 'American First Finance',
-            icon: '/Assets/icons/ammerican-financ.webp',
-            link: `https://sv1.americanfirstfinance.com/v2/kwik/10609`
-        },
-        {
-            name: 'Wells Fergo',
-            icon: '/Assets/icons/visa.png',
-            link: `https://retailservices.wellsfargo.com/ahapp/init-app?m=2176068377&l=en_US`
+            link: ``
         }
     ]
 

@@ -1,5 +1,6 @@
 import React from 'react'
 import './SideCart.css'
+import './CartSidePannel.css'
 import CartSideSection from './CartSideSection';
 import { useCart } from '../../../context/cartContext/cartContext';
 import EmptyCart from '../Cart-Components/Empty-Cart/EmptyCart';
@@ -115,7 +116,7 @@ const SideCart = ({ isCartOpen, handleCloseSideCart }) => {
                             </div>
                         )}
 
-                        {cartProducts?.products?.length > 1 && (
+                        {/* {cartProducts?.products?.length > 1 && (
                             <div className='proffesional-assembly-check-sec'>
                                 {isDeliveryAllowed && <div className='proffesional-assembly-disable-overlay'></div>}
                                 <label className='order-summary-proffesional-check-item-label'>
@@ -130,7 +131,7 @@ const SideCart = ({ isCartOpen, handleCloseSideCart }) => {
                                 </label>
                                 <p className='order-summary-proffesional-check-item-detail'>Our Premium Furniture Protection Plan covers accidental stains and damage to your new fabric, leather, and wood (and other hard surfaces) furniture.</p>
                             </div>
-                        )}
+                        )} */}
                     </div>
 
                     <div className='side-cart-desktop-professional-assembly'>
@@ -151,7 +152,7 @@ const SideCart = ({ isCartOpen, handleCloseSideCart }) => {
                             </div>
                         )}
 
-                        {cartProducts?.products?.length > 1 && (
+                        {/* {cartProducts?.products?.length > 1 && (
                             <div className='proffesional-assembly-check-sec'>
                                 {isDeliveryAllowed && <div className='proffesional-assembly-disable-overlay'></div>}
                                 <label className='order-summary-proffesional-check-item-label'>
@@ -166,7 +167,7 @@ const SideCart = ({ isCartOpen, handleCloseSideCart }) => {
                                 </label>
                                 <p className='order-summary-proffesional-check-item-detail'>Our Premium Furniture Protection Plan covers accidental stains and damage to your new fabric, leather, and wood (and other hard surfaces) furniture.</p>
                             </div>
-                        )}
+                        )} */}
                     </div>
 
                     <div className='side-cart-sub-total-contianer'>

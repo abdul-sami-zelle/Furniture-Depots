@@ -42,7 +42,7 @@ const OrderViewSecondModal = ({ viewModal, setViewModal, orderId }) => {
         },
         {
             section: 'Invoice from:', details: [
-                { name: '101 East Venango St', valOne: '(349) 898-4389', valTwo: 'meccacustomercare@gmail.com' }
+                { name: '329 Barton Street', valOne: '401-726-0557', valTwo: 'cs@thefurnituredepots.com' }
             ]
         },
         {

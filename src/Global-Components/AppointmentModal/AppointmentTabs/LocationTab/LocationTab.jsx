@@ -69,7 +69,7 @@ const LocationTab = ({ selectedTab, setSelectedTab, handleSelectStore }) => {
       <div className='location-tab-body'>
         <div className='location-body-heading-and-title'>
           <h3>Select your Showroom</h3>
-          <p>Displaying closest locations to <span>19134</span></p>
+          <p>Displaying closest locations to <span>02860</span></p>
         </div>
 
         <div className='location-tab-store-list'>

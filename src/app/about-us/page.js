@@ -7,7 +7,7 @@ export async function generateMetadata() {
     openGraph: {
       title: "About Us - Furniture Depots",
       description: "About Us - Furniture Depots",
-      url: "https://myfurnituremecca.com/about-us",
+      url: "https://thefurnituredepots.com/about-us",
       images: [
         {
           url: "/favicon.png", // ✅ static fallback image

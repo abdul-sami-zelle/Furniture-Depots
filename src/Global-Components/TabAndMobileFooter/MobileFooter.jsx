@@ -24,22 +24,21 @@ const MobileFooter = ({ checkoutPage }) => {
     const pathname = usePathname()
 
     const socialIcons = [
-        { socialIcon: '/icons/facebook.svg', socialLink: 'https://www.facebook.com/myfurnituremecca' },
-        { socialIcon: '/icons/tiktok.svg', socialLink: 'https://www.tiktok.com/@myfurnituremecca?_t=8gcQvVGSaGI&_r=1' },
-        { socialIcon: '/icons/youtube.svg', socialLink: 'https://www.youtube.com/@FurnitureMecca1' },
-        { socialIcon: '/icons/insta.svg', socialLink: 'https://www.instagram.com/myfurnituremecca/?igshid=MzRlODBiNWFlZA%3D%3D' },
+        { socialIcon: '/icons/facebook.svg', socialLink: 'https://www.facebook.com/TheFurnitureDepots' },
+        { socialIcon: '/icons/tiktok.svg', socialLink: 'https://www.tiktok.com/@thefurnituredepots.com' },
+        { socialIcon: '/icons/youtube.svg', socialLink: 'https://www.youtube.com/@TheFurnitureDepots' },
+        { socialIcon: '/icons/insta.svg', socialLink: 'https://www.instagram.com/thefurnituredepots/' },
     ]
 
     const contactData = [
-        { icon: locationIcon, title: 'Philadelphia', link: '#' },
+        { icon: locationIcon, title: 'Rhode Island', link: '#' },
         { icon: callIcon, title: '401-726-0557', link: 'tel:4017260557' },
-        { icon: mailIcon, title: 'meccacustomercare@gmail.com', link: 'mailto:meccacustomercare@gmail.com' }
+        { icon: mailIcon, title: 'cs@thefurnituredepots.com', link: 'mailto:cs@thefurnituredepots.com' }
     ]
 
     const footerCustomerCareAndAbout = [
         { 
             heading: 'Customer Care', navLinks: [
-                { name: 'Track Your Order', link: 'https://track.myfurnituremecca.com/' },
                 { name: 'Financing', link: '/financing' },
                 { name: 'Shipping & Delivery', link: '/shipping-and-delivery' },
                  { name: 'Terms & Conditions', link: '/terms-and-conditions' },
@@ -70,7 +69,7 @@ const MobileFooter = ({ checkoutPage }) => {
 
     const { stores } = useGlobalContext()
     const findDefaultStore = () => {
-        const defaultStore = stores.find(store => store.postal_code === '19134')
+        const defaultStore = stores.find(store => store.postal_code === '02860')
         return defaultStore;
     }
 
@@ -203,8 +202,8 @@ const MobileFooter = ({ checkoutPage }) => {
                         <Image src={item.icon} width={22} height={22} alt='img' />
                         {/* <Link href={item.link}>{item.title}</Link> */}
                         {
-                            item.title === 'meccacustomercare@gmail.com' ?
-                                <a href='mailto:meccacustomercare@gmail.com'>{item.title}</a> :
+                            item.title === 'cs@thefurnituredepots.com' ?
+                                <a href='mailto:cs@thefurnituredepots.com'>{item.title}</a> :
                                 <Link href={item.link}>{item.title}</Link>
                         }
 

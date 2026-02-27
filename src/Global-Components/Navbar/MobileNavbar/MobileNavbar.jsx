@@ -21,7 +21,6 @@ const MobileNavbar = ({ showMobileNav, setMobileNavVisible, headerData, sale_dat
   const [isTokenValid, setIsTokenValid] = useState(false);
 
   const menuFooterIcons = [
-    { name: 'Track', icon: '/icons/order-icon.png', link: 'https://track.myfurnituremecca.com/' },
     { name: 'Wishlist', icon: '/icons/wishlist.png', link: '/wishlist' },
     { name: 'Stores', icon: '/icons/store-locator.png', link: '/store-locator' },
     { name: 'Financing', icon: '/icons/financing-icon.png', link: '/financing' },

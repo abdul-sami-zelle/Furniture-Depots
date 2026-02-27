@@ -93,7 +93,6 @@ const OrdersTab = ({ data }) => {
   }
 
   const handleTrackOrder = () => {
-    window.open('https://track.myfurnituremecca.com/', '_blank');
     setShowActionButton(null);
   }
 

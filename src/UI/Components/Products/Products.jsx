@@ -1449,7 +1449,7 @@ const Products = ({ navigationType }) => {
                             }`,
                           }}
                         >
-                          Venango
+                          Pawtucket
                         </h3>
                       </span>
                     </div>

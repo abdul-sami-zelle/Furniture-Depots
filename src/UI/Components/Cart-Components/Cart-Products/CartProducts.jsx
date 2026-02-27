@@ -126,7 +126,7 @@ const CartProducts = ({ handleLocationModal }) => {
                         {cartProducts.products?.length > 0 && (
                             <div className='cart-protect-or-not-container'>
 
-                                <div className='cart-protect-card' onClick={isDeliveryAllowed ? undefined : cartProducts?.products?.length > 1 ? handleCartProtected : undefined}>
+                                {/* <div className='cart-protect-card' onClick={isDeliveryAllowed ? undefined : cartProducts?.products?.length > 1 ? handleCartProtected : undefined}>
                                     {cartProducts?.products?.length === 1 || isDeliveryAllowed && <div className='protect-entire-cart-disable-overlay'></div>}
                                     <img src={'/Assets/icons/guard-icon.png'} alt='guard icon' className='cart-protection-card-icon' />
                                     <div className='cart-protection-plan-details-container'>
@@ -142,7 +142,7 @@ const CartProducts = ({ handleLocationModal }) => {
                                             disabled={cartProducts?.products?.length === 1}
                                         />
                                     </div>
-                                </div>
+                                </div> */}
 
                                 <div className='cart-protect-card' onClick={isDeliveryAllowed ? undefined : selectedOption?.id !== 'METHOD-3' ? handleCartAssembly : handleCartAssemblyFalse}>
                                     {selectedOption?.id === 'METHOD-3' || isDeliveryAllowed && <div className='professional-assembly-disable'></div>}

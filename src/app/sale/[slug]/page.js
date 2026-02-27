@@ -45,12 +45,12 @@ export async function generateMetadata({ params }) {
       description: meta.description || "Browse our collection of quality furniture.",
       keywords: meta.keywords || undefined,
       alternates: {
-        canonical: meta.canonical_url || `https://myfurnituremecca.com/${slug}`,
+        canonical: meta.canonical_url || `https://thefurnituredepots.com/${slug}`,
       },
       openGraph: {
         title: `${meta.og_title} - Furniture Depots` || meta.title,
         description: meta.og_description || meta.description,
-        url: `https://myfurnituremecca.com/${slug}`,
+        url: `https://thefurnituredepots.com/${slug}`,
         siteName: "Furniture Depots",
         images: [
           {

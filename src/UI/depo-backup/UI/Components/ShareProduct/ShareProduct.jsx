@@ -28,9 +28,9 @@ const ShareProduct = ({ isSharePopup, setIsSharePopup, selectedUid, selectedProd
     }
 
     const socialPlatforms = [
-        { name: 'Facebook', img: <FaFacebook size={30} style={{ color: 'var(--text-gray)' }} />, link: 'https://www.facebook.com/myfurnituremecca' },
+        { name: 'Facebook', img: <FaFacebook size={30} style={{ color: 'var(--text-gray)' }} />, link: 'https://www.facebook.com/TheFurnitureDepots/' },
         { name: 'Instagram', img: <FaFacebookMessenger size={30} style={{ color: 'var(--text-gray)' }} />, link: '#' },
-        { name: 'Email', img: <FaSquareInstagram size={30} style={{ color: 'var(--text-gray)' }} />, link: 'https://www.instagram.com/myfurnituremecca/?igshid=MzRlODBiNWFlZA%3D%3D' },
+        { name: 'Email', img: <FaSquareInstagram size={30} style={{ color: 'var(--text-gray)' }} />, link: 'https://www.instagram.com/thefurnituredepots/' },
         { name: 'Email', img: <RiWhatsappFill size={30} style={{ color: 'var(--text-gray)' }} />, link: '#' },
         { name: 'Email', img: <FaEnvelope size={30} style={{ color: 'var(--text-gray)' }} />, link: '#' }
     ]

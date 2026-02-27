@@ -16,7 +16,7 @@ const MessageModal = ({showMessage, errorDetail, title, message, footerMessage, 
                 <p>{errorDetail.message}</p>
             </div>
             <div className='warning-modal-footer'>
-                <p>Need help?  <a href="mailto:meccacustomercare@gmail.com">Contact Support</a></p>
+                <p>Need help?  <a href="mailto:cs@thefurnituredepots.com">Contact Support</a></p>
             </div>
         </div>
     </div>
