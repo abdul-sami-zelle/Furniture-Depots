@@ -303,7 +303,6 @@ const Cart = () => {
                           color: "var(--primary-color)",
                         }}
                       >
-                        Free Delivery Promotion Applied. <br />Mileage restrictions may apply.
                       </span>
                     </>
                   ) : (selectedOption?.cost === 0 && selectedOption?.id !== 'METHOD-1') ? (
