@@ -466,7 +466,9 @@ const CheckoutClient = () => {
                   </span>
                   {
                     selectedTab === 0 ? <button onClick={handleContinueToPayment} className='right-section-place-order-button'>Continue</button>
-                      : <button onClick={handleSubmit} className='right-section-place-order-button'>Place Your Order</button>
+                      : 
+                        orderPayload?.payment_method === "paypal" ? <Paypal/> :
+                      <button onClick={handleSubmit} className='right-section-place-order-button'>Place Your Order</button>
                   }
                 </div>
 
