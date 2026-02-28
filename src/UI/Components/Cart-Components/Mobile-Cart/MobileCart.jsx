@@ -27,6 +27,7 @@ const MobileCart = (
 
     const {
         cartProducts,
+        eachProtectionValue
     } = useCart()
 
     const {isDeliveryAllowed} = useGlobalContext()
@@ -71,7 +72,7 @@ const MobileCart = (
                     <div className='mobile-guard-title-and-details'>
                         <span>
                             <h3 className='protection-guard-title'>Protection Plan</h3>
-                            <p>5 Years Protection $149</p>
+                            <p>5 Years Protection ${eachProtectionValue}</p>
                         </span>
 
                         {cartProducts.is_all_protected === 1 ? <div className="protection-all-protected">
