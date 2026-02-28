@@ -65,6 +65,7 @@ const CheckoutClient = () => {
     subTotal0,
     isCartProtected,
     isProfessionalAssembly,
+    isFurnitureAssembly,
     shippingHandlingValue,
     furnitureAssemblyValue,
     handleCartProtected
@@ -354,7 +355,7 @@ const CheckoutClient = () => {
                   <></>
                 )}
 
-                {!isProfessionalAssembly && selectedOption?.id !== 'METHOD-3' ? (
+                {isFurnitureAssembly && !isProfessionalAssembly && selectedOption?.id !== 'METHOD-3' ? (
                   <div className='cart-order-summary-price-detail-single-item'>
                     <p className='cart-order-summary-price-detail-single-item-title' style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "5px" }}>Furniture Assembly <BsInfoCircle className='info_icon_cart' onClick={() => { setShowFAssembly(true) }} /></p>
                     <p className='cart-order-summary-price-detail-single-item-price'>{formatePrice(furnitureAssemblyValue)}</p>

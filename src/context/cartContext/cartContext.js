@@ -35,12 +35,46 @@ export const CartProvider = ({ children }) => {
         return null; // If on server, just return null
     });
 
+    // const [cartProducts, setCartProducts] = useState(() => {
+    //     if (typeof window !== "undefined") {
+    //         const savedCart = localStorage.getItem('cart2');
+    //         return savedCart ? JSON.parse(savedCart) : { products: [], is_all_protected: 0, is_professional_assembly: 0, is_furniture_assembly: 0 };
+    //     }
+    //     return []
+    // });
+
     const [cartProducts, setCartProducts] = useState(() => {
-        if (typeof window !== "undefined") {
-            const savedCart = localStorage.getItem('cart2');
-            return savedCart ? JSON.parse(savedCart) : { products: [], is_all_protected: 0, is_professional_assembly: 0 };
+
+        if (typeof window === "undefined") {
+            return {
+                products: [],
+                is_all_protected: 0,
+                is_professional_assembly: 0,
+                is_furniture_assembly: 0
+            };
         }
-        return []
+
+        const savedCart = localStorage.getItem("cart2");
+
+        if (!savedCart) {
+            return {
+                products: [],
+                is_all_protected: 0,
+                is_professional_assembly: 0,
+                is_furniture_assembly: 0
+            };
+        }
+
+        const parsed = JSON.parse(savedCart);
+
+        return {
+            ...parsed,
+            // ✅ If property doesn't exist → add default
+            is_furniture_assembly:
+                parsed.is_furniture_assembly !== undefined
+                    ? parsed.is_furniture_assembly
+                    : 0
+        };
     });
 
     const [isCartProtected, setIsCartProtected] = useState(() => {
@@ -60,6 +94,16 @@ export const CartProvider = ({ children }) => {
         }
         return null
     });
+
+    const [isFurnitureAssembly, setIsFurnitureAssembly] = useState(() => {
+        if (typeof window !== "undefined") {
+            const savedCart = localStorage.getItem('cart2');
+            const savedIsFurnitureAssembly = savedCart ? JSON.parse(savedCart).is_furniture_assembly : 0;
+            return savedIsFurnitureAssembly === 1; // If saved value is 1, set true; otherwise, false
+        }
+        return null
+    });
+
 
     useEffect(() => {
         const storedCart = localStorage.getItem('cart');
@@ -158,7 +202,7 @@ export const CartProvider = ({ children }) => {
                     { cart: updatedCart, userId: uuid },
                     { headers: { authorization: `${custToken}`, "Content-Type": "application/json" } }
                 );
-            } 
+            }
 
             setIsCartLoading(false);
             return response.data;
@@ -219,6 +263,7 @@ export const CartProvider = ({ children }) => {
         setIsCartLoading(true);
         try {
             // Toggle assembly state
+            setIsFurnitureAssembly(false);
             setIsProfessionalAssembly((prev) => !prev);
 
             // Compute updated cart state
@@ -226,7 +271,38 @@ export const CartProvider = ({ children }) => {
             setCartProducts((prevCart) => {
                 newCart = {
                     ...prevCart,
-                    is_professional_assembly: prevCart.is_professional_assembly === 0 ? 1 : 0 // Toggle between 0 and 1
+                    is_professional_assembly: prevCart.is_professional_assembly === 0 ? 1 : 0,
+                    is_furniture_assembly:0
+                };
+                return newCart;
+            });
+
+            // Ensure state is updated
+            await new Promise((resolve) => setTimeout(resolve, 0));
+
+            // Pass the computed object to updateCartDB
+            return await updateCartDB(newCart);
+        } catch (error) {
+            console.error("Error updating cart:", error);
+            setIsCartLoading(false);
+            throw error;
+        }
+    };
+
+
+    const handleFurnitureAssembly = async () => {
+        setIsCartLoading(true);
+        try {
+            // Toggle assembly state
+            setIsFurnitureAssembly((prev) => !prev);
+            setIsProfessionalAssembly(false);
+            // Compute updated cart state
+            let newCart;
+            setCartProducts((prevCart) => {
+                newCart = {
+                    ...prevCart,
+                    is_furniture_assembly: prevCart.is_furniture_assembly === 0 ? 1 : 0,
+                    is_professional_assembly : 0
                 };
                 return newCart;
             });
@@ -270,6 +346,35 @@ export const CartProvider = ({ children }) => {
             throw error;
         }
     };
+
+    const handleFurnitureAssemblyFalse = async () => {
+        setIsCartLoading(true);
+        try {
+            // Toggle assembly state
+            setIsFurnitureAssembly(false);
+
+            // Compute updated cart state
+            let newCart;
+            setCartProducts((prevCart) => {
+                newCart = {
+                    ...prevCart,
+                    is_furniture_assembly: 0 // Toggle between 0 and 1
+                };
+                return newCart;
+            });
+
+            // Ensure state is updated
+            await new Promise((resolve) => setTimeout(resolve, 0));
+
+            // Pass the computed object to updateCartDB
+            return await updateCartDB(newCart);
+        } catch (error) {
+            console.error("Error updating cart:", error);
+            setIsCartLoading(false);
+            throw error;
+        }
+    };
+
 
     // Add Items To Cart
     const addToCart = (product, LocalQuantity, isProtected) => {
@@ -686,6 +791,8 @@ export const CartProvider = ({ children }) => {
                 handleCartProtected,
                 handleCartAssembly,
                 handleCartAssemblyFalse,
+                handleFurnitureAssembly,
+                handleFurnitureAssemblyFalse,
                 addToCart0,
                 cartUid,
                 setCartUid,
@@ -708,6 +815,7 @@ export const CartProvider = ({ children }) => {
                 isCartLoading, setIsCartLoading,
                 isCardAddLoading, setISCardAddLoading,
                 addToCartListSimple,
+                isFurnitureAssembly, setIsFurnitureAssembly
             }
         }>
             {children}

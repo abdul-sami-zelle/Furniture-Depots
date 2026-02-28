@@ -341,6 +341,7 @@ export const MyOrdersProvider = ({ children }) => {
                     attributes: product?.attributes
                 })),
                 professional_assembled: cartProducts?.is_professional_assembly,
+                furniture_assembled: cartProducts?.is_furniture_assembly,
                 shipping_handling: 1,
                 cart_protected: cartProducts?.is_all_protected,
                 tax: calculateTotalTax(subTotal, parseFloat(totalTax?.tax_value)),
@@ -414,6 +415,7 @@ export const MyOrdersProvider = ({ children }) => {
                     attributes: product?.attributes
                 })),
                 professional_assembled: cartProducts?.is_professional_assembly,
+                furniture_assembled: cartProducts?.is_furniture_assembly,
                 shipping_handling: 1,
                 cart_protected: cartProducts?.is_all_protected,
                 tax: calculateTotalTax(subTotal, parseFloat(totalTax?.tax_value)),

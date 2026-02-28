@@ -57,6 +57,7 @@ const Cart = () => {
     isCartProtected,
     cartProducts,
     isProfessionalAssembly,
+    isFurnitureAssembly,
     cartSection,
     setCartSection,
     shippingHandlingValue,
@@ -260,7 +261,7 @@ const Cart = () => {
                 <></>
               )}
 
-              {!isProfessionalAssembly && selectedOption?.id !== 'METHOD-3' ? (
+              {isFurnitureAssembly && selectedOption?.id !== 'METHOD-3' ? (
                 <div className='cart-order-summary-price-detail-single-item'>
                   <p className='cart-order-summary-price-detail-single-item-title' style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "5px" }}>Furniture Assembly <BsInfoCircle className='info_icon_cart' onClick={() => { setShowFAssembly(true) }} /></p>
                   <p className='cart-order-summary-price-detail-single-item-price'>{formatePrice(furnitureAssemblyValue)}</p>
@@ -320,7 +321,7 @@ const Cart = () => {
 
               <div className='cart-order-summary-price-detail-single-item'>
                 <p className='cart-order-summary-price-detail-single-item-title'>{`Tax (${totalTax?.tax_name})`}</p>
-                <p className='cart-order-summary-price-detail-single-item-price'>{totalTax ? formatePrice(calculateTotalTax((subTotal + (!isProfessionalAssembly && selectedOption?.id !== 'METHOD-3' ? furnitureAssemblyValue : 0)), parseFloat(totalTax?.tax_value))) : 0}</p>
+                <p className='cart-order-summary-price-detail-single-item-price'>{totalTax ? formatePrice(calculateTotalTax((subTotal + (isFurnitureAssembly && selectedOption?.id !== 'METHOD-3' ? furnitureAssemblyValue : 0)), parseFloat(totalTax?.tax_value))) : 0}</p>
               </div>
 
             </div>

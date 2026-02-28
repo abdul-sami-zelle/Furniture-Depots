@@ -31,7 +31,11 @@ const CartProducts = ({ handleLocationModal }) => {
         handleCartProtected,
         handleCartAssembly,
         handleCartAssemblyFalse,
-        isCartLoading
+        handleFurnitureAssembly,
+        handleFurnitureAssemblyFalse,
+        isCartLoading,
+        isFurnitureAssembly,
+        setIsFurnitureAssembly
     } = useCart()
 
     const {
@@ -144,6 +148,34 @@ const CartProducts = ({ handleLocationModal }) => {
                                     </div>
                                 </div> */}
 
+                                {/* // FURNITURE ASSEMBLY // */}
+                                <div className='cart-protect-card' onClick={() => {
+                                    if (isDeliveryAllowed) return;
+
+                                    if (selectedOption?.id === 'METHOD-3') {
+                                        handleFurnitureAssemblyFalse();
+                                    } else {
+                                        handleFurnitureAssembly();
+                                    }
+                                }}>
+                                    {selectedOption?.id === 'METHOD-3' || isDeliveryAllowed && <div className='professional-assembly-disable'></div>}
+                                    <Image src={'/Assets/icon/professional-assembly.svg'} alt='guard icon' width={80} height={80} className='cart-protection-card-icon' />
+
+                                    <div className='cart-protection-plan-details-container'>
+                                        <p className='cart-protection-plan-card-header'>Furniture Assembly</p>
+                                        <p className='cart-protection-plan-cart-desc'>{formatePrice(99)}</p>
+                                    </div>
+                                    <div className='cart-protection-checkbox-container'>
+                                        <input 
+                                        id='019'
+                                            type="checkbox"
+                                            className='order-summary-checkbox'
+                                            checked={isFurnitureAssembly}
+                                            readOnly
+                                        />
+                                    </div>
+                                </div>
+
                                 <div className='cart-protect-card' onClick={isDeliveryAllowed ? undefined : selectedOption?.id !== 'METHOD-3' ? handleCartAssembly : handleCartAssemblyFalse}>
                                     {selectedOption?.id === 'METHOD-3' || isDeliveryAllowed && <div className='professional-assembly-disable'></div>}
                                     <Image src={'/Assets/icon/professional-assembly.svg'} alt='guard icon' width={80} height={80} className='cart-protection-card-icon' />
@@ -154,6 +186,7 @@ const CartProducts = ({ handleLocationModal }) => {
                                     </div>
                                     <div className='cart-protection-checkbox-container'>
                                         <input
+                                        id='79'
                                             type="checkbox"
                                             className='order-summary-checkbox'
                                             checked={isProfessionalAssembly}

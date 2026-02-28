@@ -12,7 +12,7 @@ export const GlobalContextProvider = ({ children }) => {
   const [totalTax, setTotalTax] = useState(null);
   const [shippingLoader, setShippingLoader] = useState(false);
   const [taxLoader, setTaxLoader] = useState(false);
-  const { subTotal, isProfessionalAssembly, furnitureAssemblyValue, handleCartAssemblyFalse } = useCart();
+  const { subTotal, isProfessionalAssembly, furnitureAssemblyValue, handleCartAssemblyFalse,isFurnitureAssembly } = useCart();
   const [mainLoader, setMainLoader] = useState(false);
   const [searchLocation, setSearchLocation] = useState(false);
   const [isDeliveryAllowed, setIsDeliveryAllowed] = useState(false);
@@ -389,7 +389,7 @@ export const GlobalContextProvider = ({ children }) => {
     const subTotal1 = parseFloat(subTotal) || 0; // safe number
     const taxValue = parseFloat(totalTax?.tax_value) || 0; // safe number
     const deliverySetup =
-      (selectedOption?.id !== "METHOD-3" && !isProfessionalAssembly)
+      (selectedOption?.id !== "METHOD-3" && !isProfessionalAssembly && isFurnitureAssembly)
         ? parseFloat(furnitureAssemblyValue) || 0
         : 0;
 
