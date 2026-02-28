@@ -304,12 +304,12 @@ export const MyOrdersProvider = ({ children }) => {
     }
 
     const [error, setError] = useState({
-            card_holder_name: '',
-            card_number: '',
-            expiry_date: '',
-            sec_code: '',
-        })
-        
+        card_holder_name: '',
+        card_number: '',
+        expiry_date: '',
+        sec_code: '',
+    })
+
     const sendProducts = async () => {
 
         // Basic validation for credit card fields
@@ -341,7 +341,7 @@ export const MyOrdersProvider = ({ children }) => {
                     attributes: product?.attributes
                 })),
                 professional_assembled: cartProducts?.is_professional_assembly,
-                shipping_handling:1,
+                shipping_handling: 1,
                 cart_protected: cartProducts?.is_all_protected,
                 tax: calculateTotalTax(subTotal, parseFloat(totalTax?.tax_value)),
                 shipping_cost: getShippingInfo(selectedOption)?.cost,
@@ -389,6 +389,62 @@ export const MyOrdersProvider = ({ children }) => {
             })
             setWarningMessage(errorMessage[0])
             setShowWarning(true);
+        } finally {
+            setIsLoader(false);
+        }
+    };
+
+    const sendPaypalOrder = async () => {
+
+        try {
+
+            setIsLoader(true);
+
+            // ✅ Build EXACT same payload as sendProducts
+            const updatedPayload = {
+                ...orderPayload,
+                items: cartProducts.products.map((product) => ({
+                    name: product.name,
+                    product_id: product.product_uid,
+                    variation_uid: product.variation_uid,
+                    quantity: product.quantity,
+                    sku: product.sku,
+                    is_protected: product.is_protected,
+                    image: product?.image?.image_url,
+                    attributes: product?.attributes
+                })),
+                professional_assembled: cartProducts?.is_professional_assembly,
+                shipping_handling: 1,
+                cart_protected: cartProducts?.is_all_protected,
+                tax: calculateTotalTax(subTotal, parseFloat(totalTax?.tax_value)),
+                shipping_cost: getShippingInfo(selectedOption)?.cost,
+                tax_lines: {
+                    id: totalTax?._id || "",
+                    name: totalTax?.tax_name || "",
+                    tax_rate: totalTax?.tax_value || "0",
+                    description: totalTax?.tax_description || "",
+                    updatedAt: totalTax?.updatedAt || "",
+                },
+                shipping_lines: {
+                    id: selectedOption?._id || "",
+                    method_id: selectedOption?.id || "",
+                    tax: selectedOption?.tax || "0",
+                    cost: selectedOption?.cost || "0"
+                },
+                customer_id: localStorage?.getItem('uuid')
+            };
+
+
+            const response = await axios.post(
+                `${url}/api/v1/orders/add`,
+                updatedPayload
+            );
+
+            return response.data; // ✅ Contains paypalOrderId
+
+        } catch (error) {
+            console.error("❌ Paypal Order Error", error);
+            throw error;
         } finally {
             setIsLoader(false);
         }
@@ -481,6 +537,7 @@ export const MyOrdersProvider = ({ children }) => {
             handleTabOpen,
             addProducts,
             sendProducts,
+            sendPaypalOrder,
             isLoader,
             setIsLoader,
             handleClickTop,
@@ -500,7 +557,7 @@ export const MyOrdersProvider = ({ children }) => {
             showWarning,
             setShowWarning,
             errorDetails,
-            error, 
+            error,
             setError,
         }}>
             {children}

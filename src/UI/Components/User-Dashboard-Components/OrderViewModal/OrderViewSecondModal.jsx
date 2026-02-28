@@ -47,7 +47,7 @@ const OrderViewSecondModal = ({ viewModal, setViewModal, orderId }) => {
         },
         {
             section: 'Payment Method:', details: [
-                { name: orderData?.payment_method === 'cybersource_credit_card' && 'Credit Card', valOne: orderData?.transaction_id }
+                { name: orderData?.payment_method === 'cybersource_credit_card' ? 'Credit Card' :  orderData?.payment_method === 'paypal' ? "Paypal" : "", valOne: orderData?.transaction_id }
             ]
         },
     ]
@@ -71,7 +71,7 @@ const OrderViewSecondModal = ({ viewModal, setViewModal, orderId }) => {
                 <div className='order-view-modal-body'>
                     <div className='order-body-head'>
                         <h3>Invoice</h3>
-                        <Image src={'/Assets/Logo/main-logo.png'} width={200} height={40} alt='logo' />
+                        <Image src={'/Assets/Logo/main-logo-1.png'} width={200} height={40} alt='logo' />
                     </div>
 
                     <div className='order-second-invoice-desc'>

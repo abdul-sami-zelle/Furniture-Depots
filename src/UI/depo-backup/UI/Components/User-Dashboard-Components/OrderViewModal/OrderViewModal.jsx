@@ -68,7 +68,7 @@ const OrderViewModal = ({ viewModal, setViewModal, orderId }) => {
                 <div className='order-view-modal-body'>
                     <div className='order-body-head'>
                         <h3>Invoice</h3>
-                        <Image src={'/Assets/Logo/main-logo.png'} width={200} height={40} alt='logo' />
+                        <Image src={'/Assets/Logo/main-logo-1.png'} width={200} height={40} alt='logo' />
                     </div>
 
                     <div className='date-and-invoice-number-contianer'>

@@ -61,7 +61,7 @@ const PaymentMethod = ({ handleSubmitOrder }) => {
                     />
                   )
                   : (
-                    <Paypal />
+                    <></>
                   )
           }
           <div className=''></div>

@@ -19,6 +19,7 @@ import MiniToggleSwitch from '@/Global-Components/MiniToggler/miniToggler';
 import { BsInfoCircle } from "react-icons/bs";
 import ZipModal from '@/UI/Modals/ZipModal/ZipModal';
 import { formatePrice } from '@/utils/midlewares';
+import Paypal from '../Summary-Components/Paypal/Paypal';
 
 
 const CheckoutClient = () => {
@@ -329,7 +330,7 @@ const CheckoutClient = () => {
                 )}
 
                 {/* {isCartProtected ? ( */}
-                {cartProducts?.products?.length > 1 && <div className='cart-order-summary-price-detail-single-item'>
+                {/* {cartProducts?.products?.length > 1 && <div className='cart-order-summary-price-detail-single-item'>
                   <p className='cart-order-summary-price-detail-single-item-title' style={{
                     display: "flex",
                     alignItems: "center",
@@ -343,7 +344,7 @@ const CheckoutClient = () => {
                   </p>
                   <p className='cart-order-summary-price-detail-single-item-price'>{isCartProtected ? formatePrice(199) : "$0.00"}</p>
                 </div>}
-                
+                 */}
                 {isProfessionalAssembly ? (
                   <div className='cart-order-summary-price-detail-single-item'>
                     <p className='cart-order-summary-price-detail-single-item-title ' style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "5px" }}>White Glove <BsInfoCircle className='info_icon_cart' onClick={() => { setShowWhiteGlove(true) }} /></p>
@@ -441,8 +442,12 @@ const CheckoutClient = () => {
                     </label>
                     <p>By placing this order I agree to the Furniture Depots <span onClick={() => setIsTermsConditionsOpen(true)}>Terms & Conditions</span></p>
                     {
-                      selectedTab === 0 ? <button onClick={handleContinueToPayment} disabled={isDeliveryAllowed} style={{ opacity: isDeliveryAllowed ? 0.4 : 1, cursor: isDeliveryAllowed ? 'not-allowed' : 'pointer' }} className='right-section-place-order-button'>Continue</button>
-                        : <button onClick={handleSubmit} disabled={isDeliveryAllowed} style={{ opacity: isDeliveryAllowed ? 0.4 : 1, cursor: isDeliveryAllowed ? 'not-allowed' : 'pointer' }} className='right-section-place-order-button'>Place Your Order</button>
+                      selectedTab === 0 ? 
+                      <button onClick={handleContinueToPayment} disabled={isDeliveryAllowed} style={{ opacity: isDeliveryAllowed ? 0.4 : 1, cursor: isDeliveryAllowed ? 'not-allowed' : 'pointer' }} className='right-section-place-order-button'>Continue</button>
+                        : 
+                         orderPayload?.payment_method === "paypal" ? <Paypal/>
+                         :
+                        <button onClick={handleSubmit} disabled={isDeliveryAllowed} style={{ opacity: isDeliveryAllowed ? 0.4 : 1, cursor: isDeliveryAllowed ? 'not-allowed' : 'pointer' }} className='right-section-place-order-button'>Place Your Order</button>
                     }
                   </div>
                 </div>

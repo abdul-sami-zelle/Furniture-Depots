@@ -236,13 +236,12 @@ const Cart = () => {
               )}
 
               {/* {isCartProtected ? ( */}
-              {cartProducts?.products?.length > 1 && <div className='cart-order-summary-price-detail-single-item'>
+              {/* {cartProducts?.products?.length > 1 && <div className='cart-order-summary-price-detail-single-item'>
                 <p className='cart-order-summary-price-detail-single-item-title' style={{
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center"
                 }}>
-                  {/* Protect Entire Order */}
                   Premium Protection Plan
                   <span>
                     <MiniToggleSwitch checked={isDeliveryAllowed ? false : isCartProtected} isDeliveryAllowed={isDeliveryAllowed}
@@ -250,7 +249,7 @@ const Cart = () => {
                   </span>
                 </p>
                 <p className='cart-order-summary-price-detail-single-item-price'>{isCartProtected ? formatePrice(199) : "$0.00"}</p>
-              </div>}
+              </div>} */}
               
               {isProfessionalAssembly ? (
                 <div className='cart-order-summary-price-detail-single-item'>

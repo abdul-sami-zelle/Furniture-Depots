@@ -2,8 +2,12 @@ import React, { useEffect, useRef, useState } from 'react';
 import './Paypal.css';
 import { url } from '../../../../utils/api';
 import Image from 'next/image';
+import { useMyOrders } from '@/context/orderContext/ordersContext';
 
 const Paypal = () => {
+  const {
+    sendPaypalOrder
+  } = useMyOrders();
   const paypalRef = useRef(null);
   const [sdkReady, setSdkReady] = useState(false);
 
@@ -27,18 +31,30 @@ const Paypal = () => {
     if (sdkReady && window.paypal && paypalRef.current) {
       window.paypal.Buttons({
         createOrder: async () => {
-          const res = await fetch(`${url}/create-paypal-payment`, { method: "POST" });
-          const orderData = await res.json();
-          return orderData.id;
+
+          const orderData = await sendPaypalOrder();
+
+          console.log("🔥 Paypal Order Created:", orderData);
+
+          return orderData?.paypalOrderId;
         },
         onApprove: async (data) => {
-          const captureRes = await fetch("/api/paypal/capture-order", {
+
+          const res = await fetch(`${url}/capture-paypal-payment`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ orderId: data.orderID })
+            body: JSON.stringify({
+              paypalOrderId: data.orderID
+            })
           });
-          const captureData = await captureRes.json();
-          alert("Payment Successful!");
+
+          const result = await res.json();
+
+          if (result.status === "success") {
+            localStorage.removeItem('cart2')
+            window.location.href =
+              `/order-confirmation/${result.orderId}`;
+          }
         },
         onCancel: () => alert("Payment cancelled"),
         onError: (err) => console.error("Error during payment process", err),

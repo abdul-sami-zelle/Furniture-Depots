@@ -21,7 +21,7 @@ const generateInvoicePDF = (data) => {
     doc.setFont(undefined, 'bold');
     doc.text('Invoice', 10, 12); // Left side
 
-    doc.addImage('/Assets/Logo/new-main-logo.png', 'PNG', 150, 5, 50, 12);
+    doc.addImage('/Assets/Logo/new-main-logo-1.png', 'PNG', 150, 5, 50, 12);
 
     // Top Para
     doc.setFontSize(8);
@@ -88,7 +88,7 @@ const generateInvoicePDF = (data) => {
     doc.text('401-726-0557', 90, 62);
     doc.text('cs@thefurnituredepots.com', 90, 66);
 
-    doc.text(data.payment_method === 'cybersource_credit_card' ? 'Credit Card' : 'Credit Card', 160, 58);
+    doc.text(data.payment_method === 'cybersource_credit_card' ? 'Credit Card' : data.payment_method === 'paypal' ? 'Paypal' : "", 160, 58);
     doc.text(data.transaction_id.toString(), 160, 62);
 
     const body = data.items.map((item) => {
