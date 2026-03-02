@@ -31,7 +31,7 @@ const ProductReviewTab = ({ id, reviewRef, productData, params }) => {
   const slugProductsApi = slug ? `${url}/api/v1/products/get-by-slug/${slug}` : null
   const [slugProductCount, setSlugProductCount] = useState(0);
 
-  const {date: slugProducts, error: slugErrors, isLoading: slugLoading} = useSWR(slugProductsApi, fetcher, {
+  const {data: slugProducts, error: slugErrors, isLoading: slugLoading} = useSWR(slugProductsApi, fetcher, {
     revalidateOnFocus: false,
     revalidateOnReconnect: false,
     dedupingInterval: 1000 * 60 * 60

@@ -6,7 +6,7 @@ import PaymentMethod from '@/UI/Components/Summary-Components/PaymentMethod/Paym
 import { useMyOrders } from '@/context/orderContext/ordersContext';
 import Loader from '@/UI/Components/Loader/Loader';
 import { useCart } from '@/context/cartContext/cartContext';
-import {  truncateTitle, url, useDisableBodyScroll } from '../../../utils/api';
+import { truncateTitle, url, useDisableBodyScroll } from '../../../utils/api';
 import { useGlobalContext } from '@/context/GlobalContext/globalContext';
 import { IoIosArrowDown } from "react-icons/io";
 import DeliveryInfo from '@/UI/Components/DeliveryInfo/DeliveryInfo';
@@ -120,12 +120,18 @@ const CheckoutClient = () => {
       setIsLoading(true)
       const isValid = deliveryInfoRef.current.validateAndSubmit();
 
+
       if (typeof window !== 'undefined') {
         window.scrollTo({
           top: 0,
           behavior: 'smooth',
         });
       }
+      if (!isValid) {
+        setIsLoading(false)
+        return; // Stop here if validation fails
+      }
+
 
       handleTabOpen(1);
       try {
@@ -417,7 +423,7 @@ const CheckoutClient = () => {
                   <p className='cart-order-summary-price-detail-single-item-title'>{`Tax (${totalTax?.tax_name})`}</p>
                   <p className='cart-order-summary-price-detail-single-item-price'>{formatePrice(calculateTotalTax(subTotalValue + assemblyValue, taxRate))}</p>
                 </div>
-               
+
                 <div className='desktop-total-and-continue'>
                   <div className='right-section-total-value'>
                     <p className='right-section-total-price-text-and-value'>Total</p>
@@ -443,12 +449,12 @@ const CheckoutClient = () => {
                     </label>
                     <p>By placing this order I agree to the Furniture Depots <span onClick={() => setIsTermsConditionsOpen(true)}>Terms & Conditions</span></p>
                     {
-                      selectedTab === 0 ? 
-                      <button onClick={handleContinueToPayment} disabled={isDeliveryAllowed} style={{ opacity: isDeliveryAllowed ? 0.4 : 1, cursor: isDeliveryAllowed ? 'not-allowed' : 'pointer' }} className='right-section-place-order-button'>Continue</button>
-                        : 
-                         orderPayload?.payment_method === "paypal" ? <Paypal/>
-                         :
-                        <button onClick={handleSubmit} disabled={isDeliveryAllowed} style={{ opacity: isDeliveryAllowed ? 0.4 : 1, cursor: isDeliveryAllowed ? 'not-allowed' : 'pointer' }} className='right-section-place-order-button'>Place Your Order</button>
+                      selectedTab === 0 ?
+                        <button onClick={handleContinueToPayment} disabled={isDeliveryAllowed} style={{ opacity: isDeliveryAllowed ? 0.4 : 1, cursor: isDeliveryAllowed ? 'not-allowed' : 'pointer' }} className='right-section-place-order-button'>Continue</button>
+                        :
+                        orderPayload?.payment_method === "paypal" ? <Paypal key="paypal-payment" />
+                          :
+                          <button onClick={handleSubmit} disabled={isDeliveryAllowed} style={{ opacity: isDeliveryAllowed ? 0.4 : 1, cursor: isDeliveryAllowed ? 'not-allowed' : 'pointer' }} className='right-section-place-order-button'>Place Your Order</button>
                     }
                   </div>
                 </div>
@@ -467,9 +473,9 @@ const CheckoutClient = () => {
                   </span>
                   {
                     selectedTab === 0 ? <button onClick={handleContinueToPayment} className='right-section-place-order-button'>Continue</button>
-                      : 
-                        orderPayload?.payment_method === "paypal" ? <Paypal/> :
-                      <button onClick={handleSubmit} className='right-section-place-order-button'>Place Your Order</button>
+                      :
+                      orderPayload?.payment_method === "paypal" ? <Paypal /> :
+                        <button onClick={handleSubmit} className='right-section-place-order-button'>Place Your Order</button>
                   }
                 </div>
 

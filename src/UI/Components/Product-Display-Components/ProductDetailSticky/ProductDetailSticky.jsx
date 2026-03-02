@@ -99,6 +99,7 @@ const ProductDetailSticky = (
     if (getBySlugData) {
       const temporaryProduct = getBySlugData.products[0] || {};
       setGetBySlug(temporaryProduct)
+      setSingleProductData(temporaryProduct)
     }
   }, [getBySlugData])
 

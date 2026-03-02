@@ -1,6 +1,6 @@
 import React from 'react'
 import './Comments.css';
-import thumbUp from '../../../Assets/icons/Thumbs up.png'
+// import thumbUp from '../../../Assets/icons/thumbsup.png'
 import RatingReview from '../starRating/starRating';
 import { url } from '../../../utils/api';
 import { formatTime } from '@/utils/midlewares';
@@ -36,7 +36,7 @@ const Comments = ({ data ,order }) => {
                     </div>
                     <div className='feedback'>
                         <button>
-                            <img src={thumbUp} alt='thhumb' />
+                            <img src={"/Assets/icons/thumbsup.png"} alt='thumbup' />
                             Helpful  0
                         </button>
                     </div>
@@ -72,7 +72,7 @@ const Comments = ({ data ,order }) => {
                                 </div>
                             </div>
                             <button className='mobile-comment-feedback'>
-                                <img src={thumbUp} alt='thhumb' />
+                                <img src={"/Assets/icons/thumbsup.png"} alt='thhumb' />
                                 <p>Helpful  0</p>
                             </button>
                         </div>
